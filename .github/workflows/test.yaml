@@ -1,0 +1,20 @@
+name: "TEST"
+
+on:
+  push:
+    branches:
+      - development
+      - master
+
+jobs:
+  ls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      
+      - name: LS
+        run: |
+          ls -lah
